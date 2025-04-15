@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css_1/styCad.css">
+</head>
+<body>
+    <h2>Ingresse em um mundo de possibilidades!</h2>
+    <div class="container">
+        <div class="form-container">
+            <form method="POST" name="cadastro" action="cadastro.php" id="cadastroForm">
+                <fieldset>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="cnpj">CNPJ:</label>
+                    <input type="number" id="cnpj" name="cnpj" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <div class="form-row">
+                        <div>
+                            <label for="senha">Senha:</label>
+                            <input type="password" id="senha" name="senha" required>
+                        </div>
+                        <div>
+                            <label for="confirmar_senha">Confirme Senha:</label>
+                            <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                               <br> <label for="plano">Plano:</label>
+                                <select id="plano" name="plano">
+                                    <option value="simple">Simples - R$59,99</option>
+                                    <option value="mediano">Intermediário - R$119,99</option>
+                                    <option value="completo">Completo - R$159,99</option>
+                                </select>
+            
+                               <br> <label for="forma-pagamento">Forma de Pagamento:</label>
+                                <select id="forma-pagamento" name="forma_pagamento">
+                                    <option value="cartao">Cartão</option>
+                                    <option value="boleto">Boleto Bancário</option>
+                                    <option value="pix">PIX</option>
+                                </select>
+                    </div>
+                    <button type="button" id="nextButton">Próximo</button>
+                </fieldset>
+        </div>
+        
+        <div class="form-container" id="paymentSection">
+            <fieldset>
+
+                    <label for="acessoBDinfosProfs">Acesso emails dos professores:</label>
+                    <input type="text" id="acessoBDinfosProfs" name="acessoBDinfosProfs" placeholder="Forneça a chave de acesso correta" required>
+
+                    <label for="acessoBDinfosAlunos">Acesso emails dos alunos:</label>
+                    <input type="text" id="acessoBDinfosAlunos" name="acessoBDinfosAlunos" placeholder="Forneça a chave de acesso correta" required>
+
+                    <label for="cronograma">Acesso cronograma de atividades:</label>
+                    <input type="text" id="cronograma" name="cronograma" placeholder="Forneça a chave de acesso correta" required>
+
+                    <label for="observacoes">Observações:</label>
+                    <textarea id="observacoes" name="observacoes" rows="4" cols="50"></textarea>
+
+                    <button type="submit">Enviar</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('nextButton').addEventListener('click', function() {
+                // Remover a classe 'hidden' da segunda parte do formulário
+                document.getElementById('paymentSection').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
+
